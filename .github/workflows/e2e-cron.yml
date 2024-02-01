@@ -37,9 +37,12 @@ jobs:
       - name: ✅ Cypress E2E
         run: |
           echo ${{matrix.environment}} and ${{matrix.config-file}}
-      
+
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        
       - name: run custom action
-        uses: marcanta/test-workflow-call/actions/test-e2e@main
+        uses: ./.github/actions/test
         with:
           config-file: ${{matrix.config-file}}
     
