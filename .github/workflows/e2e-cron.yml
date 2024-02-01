@@ -6,7 +6,7 @@ on:
   - cron: "15 7 * * 1-5"
   workflow_dispatch:
     inputs:
-      env:
+      environment:
         type: choice
         description: env to runs on
         default: all
@@ -31,6 +31,7 @@ jobs:
             config-file: scheduled-prep.config.ts
     steps:
       - name: ✅ Cypress E2E
+        if: inputs.environment == "all" || matrix.environment == inputs.environment
         run: |
           echo ${{matrix.environment}} and ${{matrix.config-file}}
     
