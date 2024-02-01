@@ -2,10 +2,9 @@ name: build docker image
 description: 'build dockerfile to image'
 
 inputs:
-  cron:
-    description: 'cron when '
+  config-file:
+    description: 'config file to run cypress e2e'
     required: true
-    default: ''
 
 runs:
   using: composite
