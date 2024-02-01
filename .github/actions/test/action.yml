@@ -1,0 +1,14 @@
+name: build docker image
+description: 'build dockerfile to image'
+
+inputs:
+  config-file:
+    description: 'config file to run cypress e2e'
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: |
+        echo "yayyyy ${{inputs.config-file}} 222"
