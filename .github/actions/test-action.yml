@@ -1,0 +1,15 @@
+name: build docker image
+description: 'build dockerfile to image'
+
+inputs:
+  cron:
+    description: 'cron when '
+    required: true
+    default: ''
+
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: |
+        echo "yayyyy"
