@@ -31,7 +31,7 @@ jobs:
             config-file: scheduled-prep.config.ts
     steps:
       - name: ✅ Cypress E2E
-        if: ${{ inputs.environment == "all" || matrix.environment == inputs.environment }}
+        if: ${{ inputs.environment == 'all' || matrix.environment == inputs.environment }}
         run: |
           echo ${{matrix.environment}} and ${{matrix.config-file}}
     
