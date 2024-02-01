@@ -19,7 +19,7 @@ on:
 
 jobs:
   cypress:
-    runs-on: [self-hosted, Linux, standard]
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         include: 
