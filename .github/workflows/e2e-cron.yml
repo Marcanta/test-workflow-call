@@ -21,9 +21,14 @@ jobs:
   cypress:
     runs-on: [self-hosted, Linux, standard]
     strategy:
-      matrix: 
-        environment: [dev, uat, prep]
-        config-file: ["scheduled-dev.config.ts", "scheduled-uat.config.ts", "scheduled-prep.config.ts"]
+      matrix:
+        include: 
+          - environment: dev
+            config-file: scheduled-dev.config.ts
+          - environment: uat
+            config-file: scheduled-uat.config.ts
+          - environment: prep
+            config-file: scheduled-prep.config.ts
     steps:
       - name: ✅ Cypress E2E
         run: |
