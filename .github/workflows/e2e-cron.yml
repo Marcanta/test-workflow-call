@@ -36,7 +36,7 @@ jobs:
           echo ${{matrix.environment}} and ${{matrix.config-file}}
       
       - name: run custom action
-        uses: ./.github/actions/my-workflow/test-e2e
+        uses: marcanta/test-workflow-call/actions/test-e2e@main
         with:
           config-file: ${{matrix.config-file}}
     
