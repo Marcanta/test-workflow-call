@@ -34,4 +34,9 @@ jobs:
         if: ${{ inputs.environment == 'all' || matrix.environment == inputs.environment }}
         run: |
           echo ${{matrix.environment}} and ${{matrix.config-file}}
+      
+      - name: run custom action
+        uses: marcanta/test-workflow-call/.github/actions/test-action@main
+        with:
+          config-file: ${{matrix.config-file}}
     
