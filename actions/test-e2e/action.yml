@@ -11,4 +11,4 @@ runs:
   steps:
     - shell: bash
       run: |
-        echo "yayyyy"
+        echo "yayyyy ${{inputs.config-file}}"
