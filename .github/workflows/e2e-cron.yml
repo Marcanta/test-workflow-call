@@ -44,5 +44,5 @@ jobs:
       - name: run custom action
         uses: ./.github/actions/test
         with:
-          config-file: ${{matrix.config-file}}
+          config-file: ./${{matrix.config-file}}
     
