@@ -3,7 +3,7 @@ name: Global - Schedule - E2E - UAT 🧪
 on:
   schedule:
   # every weekdays at 7:15 AM
-  - cron: "*/5 * * * *"
+  - cron: "*/2 * * * *"
   workflow_dispatch:
     inputs:
       environment:
