@@ -31,7 +31,7 @@ jobs:
             config-file: scheduled-prep.config.ts
     steps:
       - name: early return
-        if: ${{ inputs.environment != 'all' && matrix.environment != inputs.environment }}
+        if: ${{ inputs.environment && inputs.environment != 'all' && matrix.environment != inputs.environment }}
         run: exit 1
 
       - name: ✅ Cypress E2E
